@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -21,7 +21,7 @@ jobs:
         include:
           - os: macos-latest
             python-version: "3.11"
-          - os: windows-lates
+          - os: windows-latest
             python-version: "3.11"
     timeout-minutes: 5
 
