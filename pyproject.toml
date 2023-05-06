@@ -1,3 +1,82 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pytest-smtpd"
+dynamic = ["version"]
+description = "package_description"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.7, <4"
+authors = [
+    { name = "James Warne", email = "bebleo@yahoo.com" },
+]
+keywords = [
+    "email",
+    "pytest",
+    "smtp",
+    "testing",
+]
+classifiers = [
+    "Framework :: Pytest",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "pytest",
+    "smtpdfix",
+]
+
+[project.optional-dependencies]
+dev = [
+    "flake8",
+    "isort",
+    "mypy",
+    "tox",
+]
+
+[project.urls]
+Documentation = "https://github.com/bebleo/pytest-smtpd#readme"
+Issues = "https://github.com/bebleo/pytest-smtpd/issues"
+Source = "https://github.com/bebleo/pytest-smtpd"
+
+[tool.hatch.version]
+path = "src/pytest_smtpd/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+]
+
+[tool.mypy]
+files = "src/pytest_smtpd"
+python_version = "3.7"
+# show_error_codes = true
+# allow_redefinition = true
+disallow_any_generics = true
+# disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+# disallow_untyped_decorators = true
+no_implicit_optional = true
+# local_partial_types = true
+no_implicit_reexport = true
+# strict_equality = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unused_ignores = true
+warn_return_any = true
+# warn_unreachable = true
+follow_imports = "skip"
