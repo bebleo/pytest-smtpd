@@ -9,8 +9,8 @@ This fixture is intended to address cases where to test an application that send
 To install using pip, first upgrade pip to the latest version to avoid any issues installing `cryptography`:
 
 ```bash
-$ python -m pip install --upgrade pip
-$ pip install pytest-smtpd
+python -m pip install --upgrade pip
+pip install pytest-smtpd
 ```
 
 Or, if you're using setuptools, it can be included in the `extras_require` argument of a `setup.py` file:
@@ -30,8 +30,8 @@ setup(
 and then installed with pip (-e assumes that you want your project to be editable):
 
 ```bash
-$ python -m pip install --upgrade pip
-$ pip install -e .[test]
+python -m pip install --upgrade pip
+pip install -e .[test]
 ```
 
 ## Using
@@ -119,8 +119,6 @@ Property         | Variable               | Default              | Description
 `ssl_cert_path`  | `SMTPD_SSL_CERTS_PATH` | `./certs/`           | The path to the key and certificate in PEM format for encryption with SSL/TLS or StartTLS.
 `ssl_cert_files` | `SMTPD_SSL_CERT_FILE` and `SMTPD_SSL_KEY_FILE` | `("cert.pem", None)` | A tuple of the path for the certificate file and key file in PEM format.
 
-
-
 ## Alternatives
 
 Many libraries for sending email have built-in methods for testing and using these methods should generally be prefered over pytest-smtpd. Some known solutions:
@@ -133,28 +131,28 @@ Many libraries for sending email have built-in methods for testing and using the
 To develop and test smtpdfix you will need to install [pytest-asyncio](https://github.com/pytest-dev/pytest-asyncio) to run asynchronous tests, [isort](https://pycqa.github.io/isort/) to sort imports and [flake8](https://flake8.pycqa.org/en/latest/) to lint. To install in a virtual environment for development:
 
 ```bash
-$ python -m venv venv
-$ ./venv/scripts/activate
-$ pip install -e .[dev]
+python -m venv venv
+./venv/scripts/activate
+pip install -e .[dev]
 ```
 
 Code is tested using tox:
 
 ```bash
-$ tox
+tox
 ```
 
 Quick tests can be handled by running pytest directly:
 
 ```bash
-$ pytest
+pytest
 ```
 
 We include a [pre-commit](https://pre-commit.com/) configuration file to automate checks and clean up imports before pushing code. In order to install pre-commit git hooks:
 
 ```bash
-$ pip install pre-commit
-$ pre-commit install
+pip install pre-commit
+pre-commit install
 ```
 
 ## Known Issues
