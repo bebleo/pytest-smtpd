@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "pytest-smtpd"
 dynamic = ["version"]
-description = "package_description"
+description = "An SMTP server for testing built on aiosmtpd"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.7, <4"
@@ -57,6 +57,24 @@ path = "src/pytest_smtpd/__init__.py"
 include = [
     "/src",
 ]
+
+[tool.coverage.report]
+exclude_also = [
+    "__version__ = ",
+]
+
+[tool.coverage.run]
+disable_warnings = [
+    "no-data-collected"
+]
+source = [
+    "src/pytest_smtpd",
+]
+
+[tool.flake8]
+# Flake8 does not currently suport configuration through
+# pyproject.toml files and the config can be found in the
+# setup.cfg
 
 [tool.mypy]
 files = "src/pytest_smtpd"
