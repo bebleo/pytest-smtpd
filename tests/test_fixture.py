@@ -1,7 +1,9 @@
+from typing import Any
+
 pytest_plugins = ["pytester"]
 
 
-def test_fixture_is_present(pytester) -> None:
+def test_fixture_is_present(pytester: Any) -> None:
     pytester.makepyfile(
         """
         def test_fixture(smtpd):
