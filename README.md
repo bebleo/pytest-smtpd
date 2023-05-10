@@ -165,5 +165,3 @@ $ pre-commit install
 + If the fixture start exceeds the `ready_timeout` and aborts the host and port are not consistently released and subsequent uses may result in an error. [Issue #80](https://github.com/bebleo/smtpdfix/issues/80)
 
 Written with ☕ and ❤ in Montreal, QC
-
-
