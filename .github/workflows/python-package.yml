@@ -17,12 +17,12 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.8", "3.9", "3.10", "3.11", pypy-3.8]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", pypy-3.8]
         include:
           - os: macos-latest
-            python-version: "3.11"
+            python-version: "3.12"
           - os: windows-latest
-            python-version: "3.11"
+            python-version: "3.12"
     timeout-minutes: 5
 
     steps:
